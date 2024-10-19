@@ -1,0 +1,23 @@
+<div class="actions">
+  <span class="favorite-icon" (click)="addToFavorite(book.id)">❤️</span>
+</div>
+
+<div class="title">
+  <span>{{ book.volumeInfo.title }}</span>
+</div>
+
+<img
+  *ngIf="book.volumeInfo.imageLinks; else alternativeImage"
+  src="{{ book.volumeInfo.imageLinks.smallThumbnail }}"
+>
+
+<ng-template #alternativeImage>
+  <img src="assets/images/picture-not-found.avif">
+</ng-template>
+
+<span>Description</span>
+<div class="description">
+  <span>{{ book.volumeInfo.description ? book.volumeInfo.description : 'No description available' }}</span>
+</div>
+
+<span class="info" (click)="showBook(book.id)">More info</span>

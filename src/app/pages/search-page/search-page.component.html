@@ -1,3 +1,19 @@
-<input type="text">
+<app-searchbar></app-searchbar>
 
-<div class="result-container"></div>
+<ng-container *ngIf="(books$ | async) as books; else empty">
+  <div class="result-container">
+    <app-card
+      *ngFor="let book of books"
+      [book]="book"
+    >
+    </app-card>
+  </div>
+</ng-container>
+
+<ng-template #empty>
+  <span>No result</span>
+</ng-template>
+
+<ng-container *ngIf="isLoading$ | async">
+  <app-loader></app-loader>
+</ng-container>
