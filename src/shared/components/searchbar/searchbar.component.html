@@ -1,0 +1,15 @@
+<form [formGroup]="searchForm">
+  <div class="radio-group">
+    <input formControlName="searchType" type="radio" id="title" value="title">
+    <label for="title">Title</label>
+
+    <input formControlName="searchType" type="radio" id="author" value="author">
+    <label for="author">Author</label>
+  </div>
+
+  <input
+    [formControl]="searchTermControl"
+    type="text"
+    placeholder="Start typing to search..."
+  >
+</form>
