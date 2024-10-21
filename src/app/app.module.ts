@@ -10,6 +10,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { bookReducer } from '../shared/store/book.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { BookEffects } from '../shared/store/book.effects';
+import { AuthService, GoogleBooksService } from '../shared/services';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { BookEffects } from '../shared/store/book.effects';
     StoreModule.forRoot({ bookState: bookReducer }),
     EffectsModule.forRoot([BookEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    OAuthModule.forRoot(),
   ],
+  providers: [GoogleBooksService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

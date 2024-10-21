@@ -1,1 +1,15 @@
-<p>bookshelf-page works!</p>
+<ng-container *ngIf="(bookshelf$ | async) as bookshelf">
+  <ng-container *ngIf="bookshelf.length > 0; else empty">
+    <div class="result-container">
+      <app-card
+        *ngFor="let favoriteBook of bookshelf"
+        [book]="favoriteBook"
+      >
+      </app-card>
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-template #empty>
+  <span>Empty Bookshelf</span>
+</ng-template>
