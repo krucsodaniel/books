@@ -9,10 +9,11 @@
 <img
   *ngIf="book.volumeInfo.imageLinks; else alternativeImage"
   src="{{ book.volumeInfo.imageLinks.smallThumbnail }}"
+  alt="Thumbnail image"
 >
 
 <ng-template #alternativeImage>
-  <img src="assets/images/picture-not-found.avif">
+  <img src="assets/images/picture-not-found.avif" alt="Image not found">
 </ng-template>
 
 <span>Description</span>

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, OnInit } from '@angular/core';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { searchBooks } from '../../store/book/book.actions';
