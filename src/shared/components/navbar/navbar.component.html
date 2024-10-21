@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <a [routerLink]="'/'">Home</a>
+  <a [routerLink]="'search'">Search</a>
+  <a [routerLink]="'bookshelf'"
+     [class.disabled]="!isLoggedIn"
+     (click)="!isLoggedIn ? $event.preventDefault() : null"
+  >
+    Bookshelf
+  </a>
+
+  <app-auth-button [isLoggedIn]="isLoggedIn"></app-auth-button>
+</nav>
+

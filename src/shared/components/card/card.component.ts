@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, Input, OnInit } from '@angular/core';
 import { IBook } from '../../models/book.model';
 import { Store } from '@ngrx/store';
-import { addToFavorites, removeFromFavorites, } from '../../store/book.actions';
-import { isBookInBookshelf } from '../../store/book.selectors';
+import { addToFavorites, removeFromFavorites, } from '../../store/book/book.actions';
+import { isBookInBookshelf } from '../../store/book/book.selectors';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { isAuthenticated } from '../../store/auth/auth.selectors';
 
 @Component({
   selector: 'app-card',
@@ -14,11 +15,13 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 export class CardComponent implements OnInit {
   @Input() book!: IBook;
   isInBookshelf!: boolean;
+  isLoggedIn = false;
 
   constructor(private store: Store, private destroyRef: DestroyRef, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.setBookStateInBookshelf();
+    this.setAuthState();
   }
 
   showBook(id: string): void {
@@ -38,6 +41,15 @@ export class CardComponent implements OnInit {
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((isBookInBookshelf) => {
         this.isInBookshelf = isBookInBookshelf;
+        this.cdr.detectChanges();
+      });
+  }
+
+  private setAuthState(): void {
+    this.store.select(isAuthenticated)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((authState) => {
+        this.isLoggedIn = authState;
         this.cdr.detectChanges();
       });
   }

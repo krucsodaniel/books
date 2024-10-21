@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { GoogleBooksService } from '../services';
+import { GoogleBooksService } from '../../services';
 import {
   searchBooksSuccess,
   searchBooksFailure,
@@ -16,8 +16,8 @@ import {
 } from './book.actions';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { IBook } from '../models/book.model';
-import { IKind } from '../models/kind.model';
+import { IBook } from '../../models/book.model';
+import { IKind } from '../../models/kind.model';
 
 @Injectable()
 export class BookEffects {
@@ -70,12 +70,9 @@ export class BookEffects {
         return this.googleBooksService.removeFromFavorite(book)
           .pipe(
             map(() => {
-              console.log('boooooook: ', book)
               const favoriteBooks = JSON.parse(localStorage.getItem(this.localStorageKey) || '[]') as IBook[];
               const modifiedList = favoriteBooks.filter((favoriteBook: IBook) => favoriteBook.id !== book.id);
-              console.log('modifiedList: ', modifiedList);
               localStorage.setItem(this.localStorageKey, JSON.stringify(modifiedList));
-              console.log('Localstore: ', JSON.parse(localStorage.getItem(this.localStorageKey) || '[]'));
               return removeFromFavoritesSuccess({ book });
             }),
             catchError((error) => {

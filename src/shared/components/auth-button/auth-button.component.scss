@@ -1,0 +1,15 @@
+.auth-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  width: 170px;
+  height: 40px;
+  padding: 5px 10px;
+
+  cursor: pointer;
+  background-color: white;
+  border-radius: 5px;
+  border: 0;
+}
