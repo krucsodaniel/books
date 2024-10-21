@@ -1,5 +1,5 @@
 <div class="actions">
-  <span class="favorite-icon" (click)="addToFavorite(book.id)">❤️</span>
+  <span class="favorite-icon" (click)="handleBookAction(book)">{{ isInBookshelf ? '❤️' : '🖤' }}</span>
 </div>
 
 <div class="title">
@@ -20,4 +20,4 @@
   <span>{{ book.volumeInfo.description ? book.volumeInfo.description : 'No description available' }}</span>
 </div>
 
-<span class="info" (click)="showBook(book.id)">More info</span>
+<span class="info" (click)="showBook(book.id)"><strong>More info</strong></span>
