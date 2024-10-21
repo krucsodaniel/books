@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { selectAllBooks, selectLoading } from '../../../shared/store/book.selectors';
+import { selectAllBooks, selectLoading } from '../../../shared/store/book/book.selectors';
 import { Observable } from 'rxjs';
 import { IBook } from '../../../shared/models/book.model';
 
@@ -10,7 +10,7 @@ import { IBook } from '../../../shared/models/book.model';
   styleUrl: './search-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchPageComponent  {
+export class SearchPageComponent {
   books$: Observable<IBook[] | undefined>
   isLoading$!: Observable<boolean>;
 

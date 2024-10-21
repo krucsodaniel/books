@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { IBook } from '../models/book.model';
+import { IBook } from '../../models/book.model';
 
 export const enum BookAction {
   searchBooks = '[Book Search] Search Books By Title',

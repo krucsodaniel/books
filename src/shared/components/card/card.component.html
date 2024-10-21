@@ -1,4 +1,4 @@
-<div class="actions">
+<div *ngIf="isLoggedIn" class="actions">
   <span class="favorite-icon" (click)="handleBookAction(book)">{{ isInBookshelf ? '❤️' : '🖤' }}</span>
 </div>
 

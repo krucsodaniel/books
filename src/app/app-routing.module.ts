@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BookshelfPageComponent, HomePageComponent, SearchPageComponent } from './pages';
 
 const routes: Routes = [
-  { path: 'home', component: HomePageComponent },
+  { path: '', component: HomePageComponent },
   { path: 'search', component: SearchPageComponent },
   { path: 'bookshelf', component: BookshelfPageComponent },
 ];

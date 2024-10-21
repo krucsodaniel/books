@@ -10,7 +10,7 @@ import {
   loadBookshelfSuccess,
   loadBookshelfFailure,
 } from './book.actions';
-import { IBook } from '../models/book.model';
+import { IBook } from '../../models/book.model';
 
 export interface BookState {
   books: IBook[] | undefined;
