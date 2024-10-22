@@ -14,6 +14,7 @@ import { RouterLink } from '@angular/router';
 import { AuthService, GoogleBooksService } from './services';
 import { BrowserModule } from '@angular/platform-browser';
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,6 @@ import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
     LoaderComponent,
     NavbarComponent,
   ],
-  providers: [GoogleBooksService, AuthService]
+  providers: [GoogleBooksService, AuthService, AuthGuard]
 })
 export class SharedModule {}
