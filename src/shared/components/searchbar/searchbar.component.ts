@@ -36,6 +36,12 @@ export class SearchbarComponent implements OnInit {
     this.listenToSearch();
   }
 
+  onEnterPress(): void {
+    if (this.searchTermControl.value) {
+      this.onSearchInput(this.searchTermControl.value);
+    }
+  }
+
   private listenToSearch(): void {
     this.searchTermControl.valueChanges
       .pipe(

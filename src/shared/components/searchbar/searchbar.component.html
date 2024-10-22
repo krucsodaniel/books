@@ -11,5 +11,6 @@
     [formControl]="searchTermControl"
     type="text"
     placeholder="Start typing to search..."
+    (keyup.enter)="onEnterPress()"
   >
 </form>

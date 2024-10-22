@@ -3,7 +3,7 @@
 </div>
 
 <div class="title">
-  <span>{{ book.volumeInfo.title }}</span>
+  {{ book.volumeInfo.title }}
 </div>
 
 <img
@@ -20,5 +20,3 @@
 <div class="description">
   <span>{{ book.volumeInfo.description ? book.volumeInfo.description : 'No description available' }}</span>
 </div>
-
-<span class="info" (click)="showBook(book.id)"><strong>More info</strong></span>

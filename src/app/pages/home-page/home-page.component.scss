@@ -1,0 +1,38 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 80px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0 1px 0, rgba(17, 17, 26, 0.1) 0 8px 24px, rgba(17, 17, 26, 0.1) 0 16px 48px;
+  border-radius: 5px;
+}
+
+.intro p {
+  text-align: center;
+}
+
+.search-button {
+  border: 0;
+  width: 150px;
+  height: 40px;
+
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}

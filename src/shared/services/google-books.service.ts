@@ -15,7 +15,7 @@ export class GoogleBooksService {
   searchBooks(searchTerm: string, searchType: string | null): Observable<IBook[]> {
     const params = new HttpParams()
       .set('q', `${this.typeOfSearch(searchType)}:${searchTerm}`)
-      .set('maxResults', '10');
+      .set('maxResults', '20');
 
     return this.http.get<IKind>(`${this.BASE_GOOGLE_BOOKS_API_URL}/volumes`, { params })
       .pipe(

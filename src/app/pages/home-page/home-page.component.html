@@ -1,1 +1,64 @@
-<p>home-page works!</p>
+<div class="home-container">
+  <section class="intro container">
+    <h1>Welcome to BookFinder!</h1>
+    <p>
+      Your one-stop solution to search and manage your favorite books. With
+      BookFinder, you can search for books using the Google Books API, manage
+      your personal bookshelf, and securely log in using Google OAuth to
+      personalize your experience.
+    </p>
+    <p>Here's what you can do:</p>
+  </section>
+
+  <section class="features container">
+    <h2>Features</h2>
+
+    <div class="feature">
+      <h3>🔍 Search</h3>
+      <p>
+        Use the advanced search powered by the Google Books API to find books
+        from around the world. Simply enter an author or title and
+        discover a vast library of books at your fingertips.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>📚 Bookshelf</h3>
+      <p>
+        Organize your personal library by adding or removing books from your
+        favorites. Save the books you love to your bookshelf and come back to
+        them whenever you want.
+      </p>
+      <p>
+        <strong>Note:</strong> You need to be logged in to manage your bookshelf.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>⭐ Favorite Books</h3>
+      <p>
+        After logging in, you can easily add books to your favorites or remove
+        them when you're done. Your favorite books are saved in your bookshelf
+        for quick access.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>🔐 Secure Login with Google OAuth</h3>
+      <p>
+        BookFinder uses secure Single Sign-On (SSO) through Google OAuth for a
+        seamless login experience. You can easily log in to access your
+        personalized bookshelf and manage your favorite books securely.
+      </p>
+    </div>
+  </section>
+
+  <section class="call-to-action container">
+    <h3>Ready to Discover New Books?</h3>
+    <p>
+      Start searching for your next read or log in to manage your personal
+      bookshelf now!
+    </p>
+    <button [routerLink]="'search'" class="search-button">Start Searching</button>
+  </section>
+</div>
