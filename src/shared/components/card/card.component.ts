@@ -24,10 +24,6 @@ export class CardComponent implements OnInit {
     this.setAuthState();
   }
 
-  showBook(id: string): void {
-    console.log('id: ', id);
-  }
-
   handleBookAction(book: IBook): void {
     if (this.isInBookshelf) {
       this.store.dispatch(removeFromFavorites({ book }));
