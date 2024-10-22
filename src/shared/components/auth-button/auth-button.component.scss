@@ -4,12 +4,50 @@
   align-items: center;
   gap: 10px;
 
-  width: 170px;
-  height: 40px;
-  padding: 5px 10px;
-
   cursor: pointer;
   background-color: white;
   border-radius: 5px;
   border: 0;
+
+  &--login {
+    width: 170px;
+    height: 40px;
+    padding: 5px 10px;
+  }
+
+  &--logout {
+    width: 85px;
+    height: 40px;
+    padding: 5px 10px;
+  }
+}
+
+.trigger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  width: 100px;
+  padding: 10px;
+  margin: 0;
+
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  background: #fff;
+  text-align: center;
+}
+
+.dropdown-content > li {
+  list-style-type: none;
+  border-bottom: solid 1px #8b8b8b;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.dropdown-content > li:last-child {
+  border-bottom: none;
 }
