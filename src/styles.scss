@@ -1,2 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/cdk/overlay-prebuilt.css';
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+html {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
