@@ -14,6 +14,7 @@ import { AuthService, GoogleBooksService } from '../shared/services';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { authReducer } from '../shared/store/auth/auth.reducer';
 import { AuthEffects } from '../shared/store/auth/auth.effects';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AuthEffects } from '../shared/store/auth/auth.effects';
     EffectsModule.forRoot([BookEffects, AuthEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     OAuthModule.forRoot(),
+    OverlayModule,
   ],
   providers: [GoogleBooksService, AuthService],
   bootstrap: [AppComponent]

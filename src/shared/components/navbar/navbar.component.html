@@ -8,6 +8,8 @@
     Bookshelf
   </a>
 
+  <app-badge *ngIf="isLoggedIn" [routerLink]="'bookshelf'"></app-badge>
+
   <app-auth-button [isLoggedIn]="isLoggedIn"></app-auth-button>
 </nav>
 
