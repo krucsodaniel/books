@@ -13,7 +13,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { AuthService, GoogleBooksService } from './services';
 import { BrowserModule } from '@angular/platform-browser';
-import {} from './components/badge/badge.component';
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
 
 @NgModule({
