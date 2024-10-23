@@ -1,27 +1,84 @@
-# Books
+# Book Finder🔎📖
+Welcome to the Book Finder app, a simple web application that leverages the Google Books API to allow users to search for books and manage their favorites. 
+This app uses Google OAuth2 for secure login, allowing users to save their favorite books in their personal bookshelf.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.10.
+## Features
+- **Search:** Users can search for books using the Google Books API.
+- **Bookshelf:** Users can add and remove books from their favorites, but this feature requires logging in.
+- **Favorites Management:** Once logged in, users can manage their favorite books, adding or removing them as they please.
+- **Secure Login with Google OAuth2:** This app uses Google OAuth2 for secure, single-sign-on (SSO) login. Users need to log in with their Google account to use the bookshelf feature.  
 
-## Development server
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Author Information](#author-information)
+- [Prerequisites](#prerequisites)
+- [How to Run the Application](#how-to-run-the-application)
+- [Technologies Used](#technologies-used)
+- [License](#license)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Project Overview
+This project allows users to explore Google Books through a search interface and manage a personal bookshelf by adding and removing books. Key functionalities are available to authenticated users, ensuring a secure interaction with the Google Books API using Google OAuth2.
 
-## Code scaffolding
+## Author Information
+**Author:** Daniel Krucso  
+**Role:** Software Developer (Angular, Node.js)  
+**Expertise:** Angular development, Application security, Web technologies  
+**LinkedIn:** [Daniel's LinkedIn](https://hu.linkedin.com/in/d%C3%A1niel-krucs%C3%B3-b79aa5273)  
+**GitHub:** [Daniel's GitHub](https://github.com/krucsodaniel) 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Prerequisites
+Before running the application, make sure you have the following installed:
 
-## Build
+Node.js (version 18 or higher)  
+Angular CLI (version 17 or higher)  
+npm (comes with Node.js)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## How to Run the Application
 
-## Running unit tests
+- Clone the repository:
+ 
+```git clone https://github.com/krucsodaniel/books.git```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Navigate to the project folder:
 
-## Running end-to-end tests
+```cd books```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Install dependencies:
 
-## Further help
+```npm install```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Setup OAuth2 ⚠️
+
+In order to run this project, you will need to add **Google OAuth Client ID**.
+
+1. Obtain the `clientId` by contacting the author (Daniel Krucso).
+2. Once you have the `clientId`, add it to `src/environments/environment.development.ts`:
+
+   ```typescript
+   export const environment = {
+     production: false,
+     googleOAuth: {
+       clientId: '<YOUR_CLIENT_ID>',
+       redirectUri: 'http://localhost:4200',
+       scope: 'https://www.googleapis.com/auth/books',
+     },
+   };
+
+- Run the application:
+
+```ng serve```
+
+- Open the application in your browser. Visit http://localhost:4200/.
+
+## Technologies Used
+**Angular:** Web application framework used for creating the frontend.  
+**NgRx:** State management for managing the application's state.  
+**Angular OAuth2 OIDC:** For handling OAuth authentication with Google.  
+**Google Books API:** To search for books and manage the user's bookshelf.  
+**TypeScript:** Type-safe language for building robust applications.  
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](https://license.md/licenses/mit-license/) file for details.
+
+## Thank you for using Google Book Finder app!
+If you have any feedback or suggestions, feel free to reach out to me via GitHub.
