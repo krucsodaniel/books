@@ -49,7 +49,7 @@ npm (comes with Node.js)
 
 - Setup OAuth2 ⚠️
 
-In order to run this project, you will need to add **Google OAuth Client ID**.
+In order to access all features, you will need to add **Google OAuth Client ID**.
 
 1. Obtain the `clientId` by contacting the author (Daniel Krucso).
 2. Once you have the `clientId`, add it to `src/environments/environment.development.ts`:
