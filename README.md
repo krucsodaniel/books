@@ -35,23 +35,40 @@ npm (comes with Node.js)
 
 ## How to Run the Application
 
-1. Clone the repository:
+- Clone the repository:
  
 ```git clone https://github.com/krucsodaniel/books.git```
 
-2. Navigate to the project folder:
+- Navigate to the project folder:
 
 ```cd books```
 
-3. Install dependencies:
+- Install dependencies:
 
 ```npm install```
 
-4. Run the application:
+- Setup OAuth2 ⚠️
+
+In order to run this project, you will need to add **Google OAuth Client ID**.
+
+1. Obtain the `clientId` by contacting the author (Daniel Krucso).
+2. Once you have the `clientId`, add it to `src/environments/environment.development.ts`:
+
+   ```typescript
+   export const environment = {
+     production: false,
+     googleOAuth: {
+       clientId: '<YOUR_CLIENT_ID>',
+       redirectUri: 'http://localhost:4200',
+       scope: 'https://www.googleapis.com/auth/books',
+     },
+   };
+
+- Run the application:
 
 ```ng serve```
 
-5. Open the application in your browser. Visit http://localhost:4200/.
+- Open the application in your browser. Visit http://localhost:4200/.
 
 ## Technologies Used
 **Angular:** Web application framework used for creating the frontend.  
